@@ -1,0 +1,44 @@
+Importing Mongodb database
+
+http://stackoverflow.com/questions/9762268/import-data-into-openshift-mongodb
+
+run on local, upload ok:
+rhc scp nodejs upload ScoreDaily.json /var/lib/openshift/56c56c247628e173f3000018/nodejs/tmp/ScoreDaily.json
+
+ssh 56c582f27628e195840000cc@nodejs-jibostore.rhcloud.com
+
+MongoDB 2.4 database added.  Please make note of these credentials:
+
+   Root User:     admin
+   Root Password: bVSD3--_wY3I
+   Database Name: nodejs
+
+Connection URL: mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
+
+Please make note of these MongoDB credentials:
+  RockMongo User: admin
+  RockMongo Password: bVSD3--_wY3I
+URL: https://nodejs-jibostore.rhcloud.com/rockmongo/
+
+run after ssh, importing works ok:
+mongoimport --host $OPENSHIFT_MONGODB_DB_HOST --port $OPENSHIFT_MONGODB_DB_PORT --db nodejs --collection ScoreDaily --username admin --password bVSD3--_wY3I --file /var/lib/openshift/56c582f27628e195840000cc/app-root/repo/tmp/parsedb/ScoreDaily.json --jsonArray
+
+importing to mongodb from parse:
+rhc scp nodejs upload arrayless.json /var/lib/openshift/56c582f27628e195840000cc/nodejs/tmp/arrayless.json
+mongoimport --host $OPENSHIFT_MONGODB_DB_HOST --port $OPENSHIFT_MONGODB_DB_PORT --db nodejs --collection ScoreDaily --username admin --password bVSD3--_wY3I --file /var/lib/openshift/56c582f27628e195840000cc/nodejs/tmp/arrayless.json --jsonArray
+
+ScoreDaily:
+rhc scp nodejs upload ScoreDaily.json /var/lib/openshift/56c582f27628e195840000cc/nodejs/tmp/ScoreDaily.json
+mongoimport --host $OPENSHIFT_MONGODB_DB_HOST --port $OPENSHIFT_MONGODB_DB_PORT --db nodejs --collection ScoreDaily --username admin --password bVSD3--_wY3I --file /var/lib/openshift/56c582f27628e195840000cc/nodejs/tmp/ScoreDaily.json --jsonArray
+
+TestObject:
+rhc scp nodejs upload TestObject.json /var/lib/openshift/56c582f27628e195840000cc/nodejs/tmp/TestObject.json
+mongoimport --host $OPENSHIFT_MONGODB_DB_HOST --port $OPENSHIFT_MONGODB_DB_PORT --db nodejs --collection TestObject --username admin --password bVSD3--_wY3I --file /var/lib/openshift/56c582f27628e195840000cc/nodejs/tmp/TestObject.json --jsonArray
+
+_User:
+rhc scp nodejs upload _User.json /var/lib/openshift/56c582f27628e195840000cc/nodejs/tmp/_User.json
+mongoimport --host $OPENSHIFT_MONGODB_DB_HOST --port $OPENSHIFT_MONGODB_DB_PORT --db nodejs --collection _User --username admin --password bVSD3--_wY3I --file /var/lib/openshift/56c582f27628e195840000cc/nodejs/tmp/_User.json --jsonArray
+
+_Installation:
+rhc scp nodejs upload _Installation.json /var/lib/openshift/56c582f27628e195840000cc/nodejs/tmp/_Installation.json
+mongoimport --host $OPENSHIFT_MONGODB_DB_HOST --port $OPENSHIFT_MONGODB_DB_PORT --db nodejs --collection _Installation --username admin --password bVSD3--_wY3I --file /var/lib/openshift/56c582f27628e195840000cc/nodejs/tmp/_Installation.json --jsonArray

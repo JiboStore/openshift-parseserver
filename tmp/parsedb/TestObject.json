@@ -1,4 +1,4 @@
-{ "results": [
+[
 	{
         "Hauston": 45,
         "Key": "Value",
@@ -3943,4 +3943,4 @@
         "objectId": "zz4Lv4UESV",
         "updatedAt": "2015-08-25T13:58:26.031Z"
     }
-] }
+]

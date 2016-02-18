@@ -1,4 +1,4 @@
-{ "results": [
+[
 	{
         "appIdentifier": "com.hakimhauston.vivian.challenge.beta",
         "appName": "Challenge - Beta",
@@ -114,4 +114,4 @@
         "timeZone": "Asia/Singapore",
         "updatedAt": "2016-02-08T08:24:14.690Z"
     }
-] }
+]
