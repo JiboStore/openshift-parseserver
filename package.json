@@ -1,39 +1,23 @@
 {
-  "name": "OpenShift-Nodejs-Cartridge",
+  "name": "parse-server-example",
   "version": "1.1.0",
-  "description": "Node.js Cartridge for OpenShift",
-  "keywords": [
-    "OpenShift",
-    "Node.js",
-    "application",
-    "openshift"
-  ],
-  "author": {
-    "name": "OpenShift",
-    "email": "ryanj@redhat.com",
-    "url":  "http://openshift.redhat.com/"
-  },
-  "homepage": "http://openshift.redhat.com/",
+  "description": "An example Parse API server using the parse-server module",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://gitub.com/openshift/nodejs-custom-version-openshift.git"
+    "url": "https://github.com/ParsePlatform/parse-server-example"
   },
-
-  "engines": {
-    "node": ">= 4.3.1",
-    "npm": ">= 1.2.0"
-  },
-
+  "license": "MIT",
   "dependencies": {
-    "config-multipaas": "^0.1.0",
-    "restify": "^2.8.3"
+    "express": "~4.2.x",
+    "kerberos": "~0.0.x",
+    "parse": "~1.6.12",
+    "parse-server": "~2.1"
   },
-  "devDependencies": {},
-  "bundleDependencies": [],
-
-  "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
-  "main": "server.js"
+  "engines": {
+    "node": ">=4.3"
+  }
 }
